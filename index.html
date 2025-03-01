@@ -1,466 +1,666 @@
 <!DOCTYPE HTML>
-<!--
-	Paradigm Shift by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
-		<title>Monet Nail Spa</title>
+		<title>Monet Nails & Spa</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+      <style>
+         /* Global Styles */
+         body {
+            background-color: #FFFFFF; /* White background */
+            color: #333333; /* Primary text color */
+            font-family: Arial, sans-serif; /* Clean font */
+         }
+
+         h2 a {
+            color: #4A2C4A; /* Deep Plum for heading */
+            text-decoration: none; /* Removes underline */
+         }
+
+         h2 a:hover {
+            color: #6A4C6A; /* Lighter plum on hover */
+         }
+
+         p {
+            color: #333333; /* Dark Gray for paragraph */
+         }
+
+         a.accent {
+            color: #FF6B6B; /* Soft Coral for links */
+         }
+
+         a.accent:hover {
+            color: #FF8787; /* Lighter coral on hover */
+         }
+
+         /* Intro Section */
+         #intro {
+            position: relative;
+            height: 100vh; /* Full viewport height */
+            background-color: #FFF2F9; /* Fallback color */
+            background-image: url('images/bg2.jpeg'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2em;
+         }
+
+         #intro h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            color: #4A2C4A;
+            margin: 0;
+            text-shadow: 2px 2px 15px rgba(74, 44, 74, 0.2);
+            letter-spacing: 1px;
+            text-align: center;
+         }
+
+         #intro .content-wrapper {
+            margin-left: 10%;
+            text-align: center;
+         }
+
+         #intro p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5em;
+            color: #555555;
+            margin: 0.5em 0;
+            font-weight: 300;
+         }
+
+         @media (max-width: 768px) {
+            #intro h1 { font-size: 2.5em; }
+            #intro p { font-size: 1.2em; }
+         }
+
+         /* Services Section */
+         .services-title, .services-title2 {
+            font-size: 3em;
+            color: #4A2C4A;
+            text-align: center;
+            margin-bottom: 1.5em;
+            text-shadow: 1px 1px 3px rgba(74, 44, 74, 0.2);
+         }
+
+         .services-title2 {
+            font-size: 2em;
+         }
+         
+         .service-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2em;
+            gap: 1.5em;
+         }
+
+         .service-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         }
+
+         .service-content {
+            flex: 1;
+         }
+
+         .service-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8em;
+            color: #4A2C4A;
+            margin: 0 0 0.3em;
+         }
+
+         .service-content p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1em;
+            color: #555555;
+            line-height: 1.6;
+            margin: 0.3em 0;
+         }
+
+         .service-content p strong {
+            color: #4A2C4A;
+         }
+
+         /* Buttons */
+         .service-button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 2em;
+         }
+
+         .service-button, .sh-button {
+            background-color: #f8daf4;
+            color: white;
+            padding: 0.75em 1.5em;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            text-align: center; /* Centers text inside the button */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+
+         .service-button:hover, .sh-button:hover {
+            background-color: #8E5C9F;
+            transform: scale(1.05);
+         }
+         #gallery {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 350px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    margin: auto;
+    overflow: hidden; /* Prevents images from overflowing */
+    border-radius: 10px;
+    background-color: #ddd; /* Placeholder color while images load */
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the space without distortion */
+    border-radius: 10px;
+    display: none;
+}
+
+
+.fade {
+    animation: fadeEffect 3s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+     </style>
+     
+     <script>
+      let slideIndex = 0;
+
+function showSlides() {
+    let slides = document.querySelectorAll(".slide");
+    
+    slides.forEach(slide => slide.style.display = "none"); // Hide all slides
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; } // Loop back to the first slide
+    
+    slides[slideIndex - 1].style.display = "block"; // Show current slide
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+// Start the slideshow when the page loads
+document.addEventListener("DOMContentLoaded", showSlides);
+
+      function toggleManicure() {
+        const groups = document.querySelectorAll('.service-group');
+        groups.forEach(group => group.style.display = 'none');
+        document.getElementById('manicure-services').style.display = 'block';
+    }
+
+    function togglePedicure() {
+        const groups = document.querySelectorAll('.service-group');
+        groups.forEach(group => group.style.display = 'none');
+        document.getElementById('pedicure-services').style.display = 'block';
+    }
+
+    function toggleNailEnchantments() {
+        const groups = document.querySelectorAll('.service-group');
+        groups.forEach(group => group.style.display = 'none');
+        document.getElementById('nail-enchantments').style.display = 'block';
+    }
+
+    function toggleWaxing() {
+        const groups = document.querySelectorAll('.service-group');
+        groups.forEach(group => group.style.display = 'none');
+        document.getElementById('waxing-services').style.display = 'block';
+    }
+
+    function toggleAdditional() {
+        const groups = document.querySelectorAll('.service-group');
+        groups.forEach(group => group.style.display = 'none');
+        document.getElementById('additional-services').style.display = 'block';
+    }
+  </script>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" class="fade-in">
 
 				<!-- Intro -->
-					<section class="intro">
-						<header>
-							<h1>Paradigm Shift</h1>
-							<p>A free responsive site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> / <a href="https://html5up.net">HTML5 UP</a></p>
-							<ul class="actions">
-								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
-							</ul>
-						</header>
-						<div class="content">
-							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="" /></span>
-						</div>
-					</section>
+					<div id="intro">
+						<h1>Monet Nails & Spa</h1>
+						<p>Polish your perfection</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+                  <div>
+                     <img src="images/yelp-2024.png" alt="People Love Us on Yelp 2023" style="width: 150px; height: auto; border-radius: 5px;">
+                     <img src="/images/yelp-2023.png" alt="People Love Us on Yelp 2024" style="width: 150px; height: auto; border-radius: 5px;">
+                 </div>
+					</div>
+               
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Monet Nails & Spa</a>
+					</header>
 
-				<!-- Section -->
-					<section id="first">
-						<header>
-							<h2>Magna sed nullam nisl adipiscing</h2>
-						</header>
-						<div class="content">
-							<p><strong>Lorem ipsum dolor</strong> sit amet consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor amet fermentum. Nullam venenatis erat id vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
-							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-						</div>
-					</section>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.yelp.com/biz/monet-spa-and-nails-sacramento-2" class="icon brands alt fa-yelp"><span class="label">Yelp</span></a></li>
+                     <li><a href="https://www.facebook.com/monetnails3330/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+						</ul>
+					</nav>
 
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Feugiat consequat tempus ultrices</h2>
-						</header>
-						<div class="content">
-							<p><strong>Etiam tristique libero</strong> eu nibh porttitor amet fermentum. Nullam venenatis erat id vehicula ultrices sed ultricies condimentum.</p>
-							<ul class="feature-icons">
-								<li class="icon solid fa-laptop">Consequat tempus</li>
-								<li class="icon solid fa-bolt">Etiam adipiscing</li>
-								<li class="icon solid fa-signal">Libero nullam</li>
-								<li class="icon solid fa-cog">Blandit condimentum</li>
-								<li class="icon solid fa-map-marker-alt">Lorem ipsum dolor</li>
-								<li class="icon solid fa-code">Nibh amet venenatis</li>
-							</ul>
-							<p>Vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
-						</div>
-					</section>
+				<!-- Main -->
+					<div id="main">
 
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Ultrices erat magna sed condimentum</h2>
-						</header>
-						<div class="content">
-							<p><strong>Integer mollis egestas</strong> nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-
-							<!-- Section -->
-								<section>
-									<header>
-										<h3>Erat aliquam</h3>
-										<p>Vehicula ultrices dolor amet ultricies et condimentum. Magna sed etiam consequat, et lorem adipiscing sed dolor sit amet, consectetur amet do eiusmod tempor incididunt  ipsum suspendisse ultrices gravida.</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a href="images/gallery/fulls/01.jpg" class="landscape"><img src="images/gallery/thumbs/01.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/02.jpg"><img src="images/gallery/thumbs/02.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/03.jpg"><img src="images/gallery/thumbs/03.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/04.jpg" class="landscape"><img src="images/gallery/thumbs/04.jpg" alt="" /></a>
-										</div>
-									</div>
-								</section>
-
-							<!-- Section -->
-								<section>
-									<header>
-										<h3>Nisl consequat</h3>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam sed facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet mauris. Ut magna finibus nisi nec lacinia ipsum maximus.</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a href="images/gallery/fulls/05.jpg" class="landscape"><img src="images/gallery/thumbs/05.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/06.jpg"><img src="images/gallery/thumbs/06.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/07.jpg"><img src="images/gallery/thumbs/07.jpg" alt="" /></a>
-										</div>
-									</div>
-								</section>
-
-							<!-- Section -->
-								<section>
-									<header>
-										<h3>Lorem gravida</h3>
-										<p>Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aenean ornare velit lacus, ac varius sed enim lorem ullamcorper dolore.  ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis.</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a href="images/gallery/fulls/08.jpg" class="portrait"><img src="images/gallery/thumbs/08.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/09.jpg" class="portrait"><img src="images/gallery/thumbs/09.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/10.jpg" class="landscape"><img src="images/gallery/thumbs/10.jpg" alt="" /></a>
-										</div>
-									</div>
-								</section>
-
-						</div>
-					</section>
-
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Duis sed adpiscing veroeros amet</h2>
-						</header>
-						<div class="content">
-							<p><strong>Proin tempus feugiat</strong> sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.</p>
-							<ul class="actions">
-								<li><a href="#" class="button primary large">Get Started</a></li>
-								<li><a href="#" class="button large">Learn More</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- Elements -->
-				<!--
-					<section>
-						<header>
-							<h2>Elements</h2>
-						</header>
-						<div class="content">
-
-							<section>
-								<header>
-									<h3>Text</h3>
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<h2><a href="#">Monet Nails & Spa, <br/> A Downtown Sacramento Gem</a></h2>
+                              <p>Nestled in the heart of downtown Sacramento, We are bring a touch of artistry to your fingertips. Inspired by the vibrant spirit of the city and the timeless beauty of impressionist art, we’ve been pampering locals and visitors alike since our doors opened in 2015. Our skilled artisans transform every manicure and pedicure into a masterpiece, using premium products and a passion for detail. Step into our cozy oasis amidst the urban bustle and let us elevate your nail game because in Sacramento, beauty is an art form.</p>
 								</header>
-								<div class="content">
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<hr />
-									<h5>Blockquote</h5>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h5>Preformatted</h5>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-  print 'Iteration ' + i;
-  deck.shuffle();
-  i++;
-}
-
-print 'Sorted in ' + i + ' iterations.';</code></pre>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Lists</h3>
-								</header>
-								<div class="content">
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Table</h3>
-								</header>
-								<div class="content">
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Buttons</h3>
-								</header>
-								<div class="content">
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button large">Large</a></li>
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Form</h3>
-								</header>
-								<div class="content">
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</div>
-							</section>
-
-						</div>
-					</section>
-				-->
-
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Get in touch</h2>
-						</header>
-						<div class="content">
-							<p><strong>Auctor commodo</strong> interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis.</p>
-							<form>
-								<div class="fields">
-									<div class="field half">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="field half">
-										<input type="email" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="field">
-										<textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" class="button primary" /></li>
-								</ul>
-							</form>
-						</div>
-						<footer>
-							<ul class="items">
-								<li>
-									<h3>Email</h3>
-									<a href="#">information@untitled.ext</a>
-								</li>
-								<li>
-									<h3>Phone</h3>
-									<a href="#">(000) 000-0000</a>
-								</li>
-								<li>
-									<h3>Address</h3>
-									<span>1234 Somewhere Road, Nashville, TN 00000</span>
-								</li>
-								<li>
-									<h3>Elsewhere</h3>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-										<li><a href="#" class="icon brands fa-codepen"><span class="label">Codepen</span></a></li>
-									</ul>
-								</li>
-							</ul>
-						</footer>
-					</section>
-
-				<!-- Copyright -->
-					<div class="copyright">&copy; Untitled. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</div>
-
+								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+							</article>
+						<!-- Services Section -->
+    <!-- Add this inside your <article class="post featured"> after the image -->
+      <div class="wpb_wrapper">
+         <h2 class="services-title">Our Signature Services</h2>
+         
+         <!-- Service Buttons -->
+         <div class="service-button-container">
+             <button class="service-button" onclick="toggleManicure()">Manicure Services</button>
+             <button class="service-button" onclick="togglePedicure()">Pedicure Services</button>
+             <button class="service-button" onclick="toggleNailEnchantments()">Nail Enchantments</button>
+             <button class="service-button" onclick="toggleWaxing()">Waxing Services</button>
+             <button class="service-button" onclick="toggleAdditional()">Additional Services</button>
+         </div>
+     <article class="post featured">
+         <!-- Manicure Services -->
+         <div id="manicure-services" class="service-group" style="display: none;">
+             <div class="wpb_text_column wpb_content_element">
+                 <div class="wpb_wrapper">
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Classic Spa Manicure (polish/gel)</h3>
+                             <p><strong>$25/$40</strong></p>
+                             <p>Have your hands pampered, nails trimmed and shaped, cuticles treated and trimmed. Relax with a light massage and have your hands wrapped in a warm towel to soothe aching muscles and finally, have your nails polished to a brilliant shine.</p>
+                         </div>
+                     </div>
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Deluxe Spa Manicure (polish/gel)</h3>
+                             <p><strong>$30/$45</strong></p>
+                             <p>Treat yourself with our Deluxe Spa that includes our Classic Mani, ADDED with a skin renewing scrub, revitalize with an effervescent soak, and enjoy an aroma therapeutic massage.</p>
+                         </div>
+                     </div>
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Luxury Spa Manicure (polish/gel)</h3>
+                             <p><strong>$35/$50</strong></p>
+                             <p>Pamper yourself with our Luxury Mani that includes our Deluxe Mani, ADDED with a masque to reveal a refreshed and glowing skin. Finally, treat your hands to a warm paraffin bath for nourishing, younger, rejuvenated skin.</p>
+                         </div>
+                     </div>
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Monet Special Manicure (polish/gel)</h3>
+                             <p><strong>$40/$55</strong></p>
+                             <p>A Monet Special at its finest! Included with our Luxury Mani, this treatment incorporates an exfoliating scrub with hot towel removal. Nails and cuticles are groomed. A relaxing hand and arm massage with a hydrating imported essential oil, is then followed with a warm paraffin mask to nourish the skin while soothing sore muscles and joints.</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     
+         <!-- Pedicure Services -->
+         <div id="pedicure-services" class="service-group" style="display: none;">
+             <div class="wpb_text_column wpb_content_element">
+                 <div class="wpb_wrapper">
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Classic Spa Pedicure (polish/gel)</h3>
+                             <p><strong>$35/$50</strong></p>
+                             <p>Soak your feet in warm water with mineral salt. Our technician scrubs your feet to get rid of any dead skin or imperfections, then clips and files your toenails and briefly massages your legs and feet before applying a soothing lotion. Your toenails are then painted with a base coat, regular polish and top coat.</p>
+                         </div>
+                     </div>
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Deluxe Spa Pedicure (polish/gel)</h3>
+                             <p><strong>$42/$57</strong></p>
+                             <p>Treat yourself with our Deluxe Pedi that includes our Classic Pedi. ADDED with peppermint sugar scrub that exfoliates and removes dead skin cells to reveal refreshed and glowing skin and experiencing a soothing aroma therapeutic massage.</p>
+                         </div>
+                     </div>
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Luxury Spa Pedicure (polish/gel)</h3>
+                             <p><strong>$50/$65</strong></p>
+                             <p>Pamper yourself with our Luxury Pedi that includes our Deluxe Pedi. ADDED with a mint marine masque for a refreshing feeling, then indulge in our warm aroma-therapeutic paraffin bath for hydrating and soft finish, conclude our lavish pedicure in the ultimate relaxation of warm aromatic oil massage.</p>
+                         </div>
+                     </div>
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Make'em Jelly Pedicure (polish/gel)</h3>
+                             <p><strong>$55/$70</strong></p>
+                             <p>Spoil yourself with our Make'em Jelly Pedi that includes our Luxury Pedi (without a mint marine masque) with a Jelly Spa Bath, which helps to exfoliate dead skin cells and nourish skin with rose centifolia flower water. Afterward, indulge in our warm aroma-therapeutic paraffin bath to hydrate and heal skin for a soft finish.</p>
+                         </div>
+                     </div>
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Monet Special Pedicure (polish/gel)</h3>
+                             <p><strong>$60/$75</strong></p>
+                             <p>Spoil yourself with our Monet Special that includes our Luxury Pedi, ADDED with lemon/cucumber slices, rose petals and our special imported essential oil to nourish and hydrate your skin, followed by a relaxing massage with organic coconut oil to seal in moisture for much softer and healthier feet.</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     
+         <!-- Nail Enchantments -->
+         <div id="nail-enchantments" class="service-group" style="display: none;">
+             <div class="wpb_text_column wpb_content_element">
+                 <div class="wpb_wrapper">
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Gel Powder Full Set</h3>
+                             <p><strong>$55+</strong></p>
+                             <p>Enhance your nails with a durable gel powder full set, offering a lightweight, long-lasting finish with a natural look.</p>
+                         </div>
+                     </div>
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Gel Powder Fill</h3>
+                             <p><strong>$45+</strong></p>
+                             <p>Maintain your gel nails with a professional fill, keeping them strong and polished.</p>
+                         </div>
+                     </div>
+                     <div class="service-item">
+                         <div class="service-content">
+                             <h3>Ombre Full Set</h3>
+                             <p><strong>$65+</strong></p>
+                             <p>Elevate your style with a stunning ombre full set, blending colors seamlessly for a chic, artistic finish.</p>
+                         </div>
+                     </div>
+                     <div class="service-item">
+                        <div class="service-content">
+                           <h3>Pink & White Full Set</h3>
+                           <p><strong>$60+</strong></p>
+                           <p>Get a classic and elegant pink & white full set for a timeless, beautiful look.</p>
+                     </div>
+                     </div>
+                     <div class="service-item">
+                        <div class="service-content">
+                           <h3>Pink & White Fill</h3>
+                           <p><strong>$45 - $55</strong></p>
+                           <p>Maintain your perfect nails with our pink & white fill, keeping them fresh and flawless.</p>
+                        </div>
+                     </div>
+                     <div class="service-item">
+                        <div class="service-content">
+                           <h3>Liquid Builder Gel</h3>
+                           <p><strong>$45</strong></p>
+                           <p>Enhance the strength and durability of your nails with our liquid builder gel application.</p>
+                        </div>
+                     </div>
+                     <div class="service-item">
+                        <div class="service-content">
+                           <h3>Hard Gel</h3>
+                           <p><strong>$55+</strong></p>
+                           <p>Experience long-lasting, chip-resistant nails with our professional hard gel service.</p>
+                        </div>
+                     </div>
+                     <div class="service-item">
+                        <div class="service-content">
+                           <h3>Dip French</h3>
+                           <p><strong>$60+</strong></p>
+                           <p>Achieve a sophisticated and natural look with our dip French technique.</p>
+                        </div>
+                     </div>
+                     <div class="service-item">
+                        <div class="service-content">
+                           <h3>Dip Powder</h3>
+                           <p><strong>$50</strong></p>
+                           <p>Get strong, lightweight, and natural-looking nails with our dip powder service.</p>
+                        </div>
+                     </div>
+                     
+                 </div>
+             </div>
+         </div>
+     
+         <!-- Waxing Services -->
+         <div id="waxing-services" class="service-group" style="display: none;">
+            <div class="wpb_text_column wpb_content_element">
+                <div class="wpb_wrapper">
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Eyebrow Waxing</h3>
+                            <p><strong>$15</strong></p>
+                            <p>Shape and define your brows with our gentle, precise waxing service for a polished look.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Eyebrow Shaping</h3>
+                            <p><strong>$18</strong></p>
+                            <p>Achieve a perfect arch and structure with our expert eyebrow shaping service.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Upper Lip Waxing</h3>
+                            <p><strong>$10</strong></p>
+                            <p>Remove unwanted hair with a quick, gentle waxing for a smooth, clean finish.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Chin Waxing</h3>
+                            <p><strong>$15+</strong></p>
+                            <p>Effectively remove chin hair for a smooth, soft feel. Pricing may vary based on hair thickness.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Under Arms Waxing</h3>
+                            <p><strong>$25+</strong></p>
+                            <p>Enjoy long-lasting smoothness with our underarm waxing service. Pricing varies.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Full Legs Waxing</h3>
+                            <p><strong>$70+</strong></p>
+                            <p>Get silky smooth legs with our full-leg waxing service. Pricing depends on hair length.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Half Legs Waxing</h3>
+                            <p><strong>$50+</strong></p>
+                            <p>Remove unwanted hair from either upper or lower legs for a sleek look.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Full Arms Waxing</h3>
+                            <p><strong>$50+</strong></p>
+                            <p>Experience smooth and hair-free arms with our full-arm waxing service.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Half Arms Waxing</h3>
+                            <p><strong>$40+</strong></p>
+                            <p>Target either upper or lower arms for soft, hair-free skin.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Bikini Waxing</h3>
+                            <p><strong>$60+</strong></p>
+                            <p>Feel confident and fresh with our bikini waxing service. Pricing varies by coverage.</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3>Full Face Waxing</h3>
+                            <p><strong>$50+</strong></p>
+                            <p>A complete facial waxing experience, including brows, lip, and sides, for a flawless complexion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+     
+        <!-- Additional Services -->
+<div id="additional-services" class="service-group" style="display: none;">
+   <div class="wpb_text_column wpb_content_element">
+       <div class="wpb_wrapper">
+           <div class="service-item">
+               <div class="service-content">
+                   <h3>Collagen Treatment</h3>
+                   <p><strong>$10</strong></p>
+                   <p>Add a collagen boost to any service for hydrated, youthful skin and stronger nails.</p>
+               </div>
+           </div>
+           <div class="service-item">
+               <div class="service-content">
+                   <h3>Paraffin Wax</h3>
+                   <p><strong>$10</strong></p>
+                   <p>Soften and rejuvenate your hands or feet with a warm paraffin wax treatment.</p>
+               </div>
+           </div>
+           <div class="service-item">
+               <div class="service-content">
+                   <h3>Acrylic Take Off</h3>
+                   <p><strong>$20</strong></p>
+                   <p>Safely remove acrylic nails with our gentle, damage-free process.</p>
+               </div>
+           </div>
+           <div class="service-item">
+               <div class="service-content">
+                   <h3>Long Nail</h3>
+                   <p><strong>$5+</strong></p>
+                   <p>Extra charge for longer nails to ensure the perfect, lasting look.</p>
+               </div>
+           </div>
+           <div class="service-item">
+               <div class="service-content">
+                   <h3>Gel Polish Change</h3>
+                   <p><strong>$25 - $35</strong></p>
+                   <p>Refresh your nails with a new gel polish color, lasting shine, and durability.</p>
+               </div>
+           </div>
+           <div class="service-item">
+               <div class="service-content">
+                   <h3>Regular Polish Change</h3>
+                   <p><strong>$15</strong></p>
+                   <p>Quick polish change with a wide range of colors to choose from.</p>
+               </div>
+           </div>
+           <div class="service-item">
+               <div class="service-content">
+                   <h3>Free Hand Design</h3>
+                   <p><strong>$3+</strong></p>
+                   <p>Hand-painted nail art for a unique and creative style. Pricing varies based on design.</p>
+               </div>
+           </div>
+           <div class="service-item">
+               <div class="service-content">
+                   <h3>Shiny Buffer</h3>
+                   <p><strong>$5</strong></p>
+                   <p>Enhance your natural nails with a glossy shine without polish.</p>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+<section id="gallery">
+   <h1 style="text-align: center;">Our Gallery</h1>
+   <div class="slideshow-container">
+      <img src="images/storeFront.JPG" class="slide fade">
+      <img src="images/store1.jpg" class="slide fade">
+      <img src="images/store2.jpg" class="slide fade">
+      <img src="images/store3.jpg" class="slide fade">
+      <img src="images/store4.jpg" class="slide fade">
+      <img src="images/store5.jpg" class="slide fade">
+  </div>
+</section>
+<section>
+   <h3 style="font-size: 1.8em; text-align: center; color: #4A2C4A;">Wanna Make an Appointment?</h3>
+   <p style="text-align: center; font-size: 1.2em; color: #555555;">Please call us at <a href="tel:+19164577018" class="accent">(916) 457-7018</a></p>
+</section>
+</article>
+				<!-- Footer -->
+            <footer id="footer">
+               <section>
+                   <h3 style="font-size: 1.8em;">Our Location</h3>
+                   <iframe 
+                       width="110%" 
+                       height="500" 
+                       frameborder="0" 
+                       style="border:0; border-radius: 10px;" 
+                       allowfullscreen 
+                       loading="lazy" 
+                       referrerpolicy="no-referrer-when-downgrade"
+                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.5497199438737!2d-121.46419639999999!3d38.567187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ad092380a7a25%3A0xaedb5b6b3e14ec40!2sMonet%20Nails%20%26%20Spa!5e0!3m2!1sen!2sus!4v1740823978232!5m2!1sen!2sus">
+                   </iframe>
+               </section>
+               <section class="split contact">
+                   <section class="alt">
+                       <h3 style="font-size: 1em;" >Address</h3>
+                       <p style="font-size: 1em;">3330 Folsom Blvd B<br />
+                          Sacramento, CA 95816</p>
+                   </section>
+                   <section>
+                       <h3 style="font-size: 1em;">Phone</h3>
+                       <p style="font-size: 1em;"><a href="tel:+19164577018">(916) 457-7018</a></p>
+                   </section>
+                   <section>
+                       <h3 style="font-size: 1em;">Social</h3>
+                       <ul class="icons alt" style="font-size: 1em;">
+                           <li><a href="https://www.yelp.com/biz/monet-spa-and-nails-sacramento-2" class="icon brands alt fa-yelp"><span class="label">Yelp</span></a></li>
+                           <li><a href="https://www.facebook.com/monetnails3330/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                       </ul>
+                   </section>
+               </section>
+           </footer>
 			</div>
-
+         <br>
+         
+         <p style="text-align: center;">2025 Monet Nail and Spa copyright. All right reserved</p>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
